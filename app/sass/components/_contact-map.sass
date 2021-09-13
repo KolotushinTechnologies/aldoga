@@ -1,0 +1,122 @@
+
+.feedback
+    &__wrapper
+        margin-bottom: 65px
+    &__title
+    &__form
+        display: flex
+        flex-wrap: wrap
+        .contact-form__inputs
+            flex-basis: 30%
+            margin-right: 30px
+        .contact-form__input
+            background-color: #f4f4f4
+            &:invalid
+                &::placeholder
+                    color: #ed2121
+        .contact-form__icon
+            background-color: #f4f4f4
+        .contact-form__group
+            margin-bottom: 0
+            &:not(:last-child)
+                margin-bottom: 30px
+        .contact-form__group_textarea
+            flex: 1
+            align-self: stretch
+            margin-bottom: 0 !important
+        .contact-form__textarea
+            height: 100%
+            width: 100%
+            resize: vertical
+            background-color: #f4f4f4
+            min-height: 100px
+    &__payment
+        margin-top: 60px
+        flex-basis: 100%
+        .payment__btn-with-check
+            margin: 0 auto
+
+
+.contact-map
+    &__wrapper
+    &__title
+    &__map
+        position: relative
+    &__iframe-wrapper
+        position: relative
+        height: 400px
+    &__information-wrapper
+        content: ""
+        position: absolute
+        display: flex
+        align-items: center
+        top: 50%
+        transform: translateY(-50%)
+        right: 0
+        height: auto
+        width: 360px
+        margin: 0 auto
+        z-index: 30
+    &__cart 
+        position: absolute
+        margin-left: auto
+        background-color: rgba(255,255,255,.5)
+        padding: 65px 35px
+
+@media only screen and (max-width: 1300px)
+    .contact-map__cart
+        padding: 25px 15px
+
+@media only screen and (max-width: 1200px)
+    .contact-map__cart
+        .contact-list__link::before
+            margin-right: 10px
+            font-size: 14px
+        .contact-list__link
+            font-size: 12px
+        .contact-list__item_text
+            font-size: 12px
+
+@media only screen and (max-width: 992px)
+    .contact-map__information-wrapper
+        position: relative
+        top: unset
+        right: unset
+        left: unset
+        bottom: unset
+        transform: translateY(0)
+        max-width: 1170px
+        width: auto
+        margin: 0 auto
+    .contact-map__cart
+        position: relative
+        padding: 20px 20px 10px 20px
+        .contact-list__item
+            margin-bottom: 5px
+        .contact-list__item_text
+            margin-top: 0
+
+@media only screen and (max-width: 768px)
+    .contact-map__iframe-wrapper
+        height: 300px
+    .feedback__form .contact-form__inputs
+        margin-right: 15px
+    .feedback__form .contact-form__group:not(:last-child)
+        margin-bottom: 15px
+
+@media only screen and (max-width: 576px)
+    .contact-map__iframe-wrapper
+        height: 250px
+
+@media only screen and (max-width: 480px)
+    .feedback__wrapper
+        margin-bottom: 30px
+    .feedback__form .contact-form__inputs
+        flex-basis: 100%
+        margin-right: 0
+        margin-bottom: 15px
+    .feedback__payment
+        margin-top: 30px
+    .feedback__form .contact-form__group_textarea
+        flex-basis: 100%
+

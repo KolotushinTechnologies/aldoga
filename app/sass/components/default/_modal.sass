@@ -1,0 +1,307 @@
+.modal
+    position: fixed
+    display: block
+    top: 50%
+    right: 50%
+    transform: translate(50%, -50%) scale(1.1)
+    background: #fff
+    opacity: 0
+    visibility: hidden
+    z-index: -1
+    transition: all .3s ease
+    &.active
+        opacity: 1
+        visibility: visible
+        z-index: 200
+        transform: translate(50%, -50%) scale(1)
+    &_success
+        width: 100%
+        height: 100%
+        padding: 20px 20px 75px 35px
+        max-width: 850px
+        max-height: 525px
+    &_question
+        width: 100%
+        height: 100%
+        padding: 20px 20px 75px 35px
+        max-width: 850px
+        max-height: 525px
+    &_review
+        width: 100%
+        max-width: 1170px
+        height: auto
+        padding: 20px
+    &_leave-review
+        width: 100%
+        height: 100%
+        padding: 20px
+        max-width: 830px
+        max-height: 690px
+    &__header
+        display: flex
+    &__close
+        +reset-btn
+        margin-left: auto
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: 25px
+        height: 25px
+        border: 1px solid #cbcbcb
+        border-radius: 50%
+        font-size: 20px
+        color: #cbcbcb
+        cursor: pointer
+    &__title
+        margin: 35px 0 20px 0
+        font-size: 30px
+        font-weight: 900
+        color: rgb(51, 51, 51)
+        line-height: 1.2
+        text-align: center
+    &__center
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        height: 100%
+    &__description
+        margin: 0 0 45px 0
+        font-size: 18px
+        color: rgb(51, 51, 51)
+        text-align: center
+    &__btn-wrapper
+        width: 100%
+        text-align: center
+    &__btn
+        width: 100%
+        max-width: 300px
+        margin: 40px 0
+    &__review
+        display: flex
+        align-items: center
+        padding: 20px
+        &-content
+    &__author
+        &-name
+            font-size: 20px
+            font-weight: 900
+            color: rgb(17, 17, 17)
+            line-height: 1.25
+            margin-bottom: 15px
+        &-text
+            margin: 15px 0 20px 0
+            font-size: 16px
+    &__links
+        display: flex
+        align-items: center
+        &-title
+            margin-right: 12px
+        &-link
+            +reset-link
+            +reset-btn
+            position: relative
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            width: 34px
+            height: 34px
+            border-radius: 50%
+            transition: all .3s ease
+            color: #fff
+            background-color: #d7d7d7
+            overflow: hidden
+            &:not(:last-child)
+                margin-right: 12px
+            &::before
+                position: absolute
+                display: flex
+                justify-content: center
+                align-items: center
+                margin: 0
+                font-size: 18px
+            &_ok
+                &:hover,
+                &:focus
+                    background-color: #fd9100
+            &_vk
+                &:hover,
+                &:focus
+                    background-color: #4c75a3
+            &_fb
+                &::before
+                    font-size: 27px
+                    top: 10px
+                    left: 4px
+                &:hover,
+                &:focus
+                    background-color: #3b5998
+            &_insta
+                &:hover,
+                &:focus
+                    background-color: #E1306C
+
+    .feedback__form .contact-form__textarea
+        resize: none
+    .cart-images
+        flex-wrap: wrap
+        width: 400px
+        flex-basis: 400px
+        min-width: 400px
+        margin-right: 60px
+        &__thumbnails
+            flex-direction: row
+            order: 2
+            width: 100%
+            margin-right: 0
+        &__thumbnail-wrapper
+            flex-basis: calc( 25% - 15px )
+            width: auto
+            margin-right: 15px
+            margin-bottom: 0
+            height: 85px
+            &:last-child
+                flex-basis: 25%
+                margin-right: 0
+        &__thumbnail
+            width: 100%
+            height: 100%
+        &__main-img-wrapper
+            order: 1
+            flex-basis: 100%
+            height: auto
+            margin-bottom: 15px
+        &__main-img
+            width: 100%
+            height: 100%
+
+@media only screen and (max-width: 992px) 
+    .modal
+        width: 95%
+        &_question
+            height: auto
+            padding-bottom: 20px
+        &_leave-review
+            height: auto
+            width: auto
+            min-width: 60%
+        &_success
+            width: auto
+            height: auto
+            min-height: 320px
+            min-width: 360px
+            padding-bottom: 20px
+        &__title
+            font-size: 18px
+            margin: 20px 0
+        &__description
+            font-size: 14px
+            margin: 20px 0
+        &__btn
+            margin: 30px 0 0 0
+        .cart-images
+            width: 300px
+            flex-basis: 300px
+            min-width: 300px
+            margin-right: 30px
+        &__author-name
+            font-size: 18px
+        &__author-text
+            font-size: 14px
+            margin: 10px 0
+        &__links-title
+            font-size: 14px
+        &__links
+            &-link
+                width: 25px
+                height: 25px
+                &::before
+                    font-size: 14px
+                &_fb
+                    &::before
+                        top: 8px
+                        font-size: 18px
+        .cart-images__thumbnail-wrapper
+            height: 60px
+
+@media only screen and (max-width: 768px) 
+    .modal
+        &_leave-review
+            height: auto
+            width: auto
+            min-width: 90%
+        &__author-name
+            font-size: 13px
+        &__author-text
+            font-size: 12px
+        &__links-title
+            font-size: 12px
+        .cart-images
+            min-width: 150px
+            width: 150px
+            flex-basis: 150px
+            margin-bottom: auto
+        .cart-images__main-img-wrapper
+            margin-bottom: 10px
+        .cart-images__thumbnail-wrapper
+            height: 37.5px
+        .cart-images__thumbnail-wrapper:not(:last-child)
+            margin-right: 10px
+            flex-basis: calc(25% - 10px)
+        .modal__review-content
+            flex: 1
+
+
+@media only screen and (max-width: 576px) 
+    .modal
+        padding: 20px 20px 30px 20px
+        &_success
+            min-width: 280px
+            min-height: 280px
+        &__close
+            width: 20px
+            height: 20px
+            font-size: 16px
+            margin-bottom: 10px
+        &__title
+            font-size: 16px
+            margin: 0 0 15px 0
+        &__description
+            font-size: 13px
+        &__review
+            flex-wrap: wrap
+            padding: 0
+        &__review-content
+            order: 1
+            margin-bottom: 20px
+            width: 100%
+            flex-basis: 100%
+        .cart-images
+            flex-basis: 100%
+            max-width: 100%
+            order: 2
+            margin-bottom: 0
+            margin-right: auto
+            margin-left: auto
+        .cart-images__thumbnail-wrapper
+            height: auto
+            max-height: 70px
+        &_review
+            transform: scale(1.1)
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            margin: 30px auto 30px auto
+            overflow-y: scroll
+            &::-webkit-scrollbar-track
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+                background-color: #fafafa
+            &::-webkit-scrollbar
+                width: 6px
+                height: 5px
+                background-color: #fafafa
+            &::-webkit-scrollbar-thumb
+                background-color: #111
+            &.active
+                transform: scale(1)

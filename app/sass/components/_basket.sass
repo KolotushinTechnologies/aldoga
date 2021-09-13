@@ -1,0 +1,141 @@
+.site-counter
+    display: flex
+    align-items: center
+    justify-content: center
+    &__control
+        +reset-btn
+        width: 30px
+        height: 30px
+        border: 1px solid #d7d7d7
+        cursor: pointer
+    &__input
+        width: 80px
+        height: 30px
+        margin: 0 3px
+        padding: 0 10px
+        outline: none
+        font-size: 13px
+        color: #111
+        font-weight: 500
+        text-align: center
+        background-color: transparent
+        border: 1px solid #d7d7d7
+    
+.basket-orders
+    &__wrapper
+        margin-bottom: 50px
+    &__list
+        &.active
+            display: block
+    &__table
+        display: table
+        width: 100%
+        border-spacing: 0 10px
+        &_order
+            display: none
+            &.active
+                display: table
+    &__header
+        display: table-row
+    &__header-title
+        display: table-cell
+        text-align: center
+        padding-bottom: 10px
+        color: #6f6f6f
+        &_product
+        &_price
+        &_number
+        &_total
+        &_delete
+    &__content
+        display: table-row
+        margin-bottom: 10px
+        &:not(:last-child)
+    &__content-col
+        display: table-cell
+        vertical-align: middle
+        background-color: #f4f4f4
+        &_product
+            display: flex
+        &_price
+            text-align: center
+            color: #111
+            font-weight: 900
+        &_number
+            text-align: center
+        &_total
+            text-align: center
+            color: #111
+            font-weight: 900
+        &_delete
+            text-align: center
+            cursor: pointer
+    &__description
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__img
+        width: 100px
+        height: 100px
+        object-fit: cover
+        margin-right: 35px
+    &__name
+        font-size: 20px
+        font-weight: 900
+        color: #111
+        line-height: 1.25
+    &__tags
+        color: #6f6f6f
+        font-size: 14px
+
+@media only screen and (max-width: 992px) 
+    .basket-orders__header-title
+        font-size: 13px
+    .basket-orders__img
+        height: 60px
+        width: 60px
+    .basket-orders__name
+        font-size: 16px
+    .basket-orders__tags
+        font-size: 13px
+        line-height: 1
+    .basket-orders__content-col
+        font-size: 14px
+
+@media only screen and (max-width: 768px) 
+    .basket-orders__list
+        overflow-x: scroll
+        &::-webkit-scrollbar-track
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+            background-color: #fafafa
+        &::-webkit-scrollbar
+            width: 6px
+            height: 5px
+            background-color: #fafafa
+        &::-webkit-scrollbar-thumb
+            background-color: #111
+    .basket-orders__table
+        min-width: 650px
+    .basket-orders__header-title
+        padding-bottom: 0
+        &_product
+            text-align: left
+    .basket-orders__img
+        width: 45px
+        height: 45px 
+        margin-right: 10px
+    .basket-orders__name
+        font-size: 13px
+    .basket-orders__content-col
+        font-size: 12px
+    .site-counter_basket
+        .site-counter__control
+            width: 20px
+            height: 20px
+        .site-counter__input
+            width: 35px
+            height: 20px
+            font-size: 12px
+
+@media only screen and (max-width: 420px) 
+    //

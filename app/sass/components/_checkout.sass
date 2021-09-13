@@ -1,0 +1,396 @@
+.payment
+    &__group
+        display: flex
+        width: 100%
+        margin-bottom: 35px
+    &__input
+        height: 40px
+        flex-basis: 70%
+        margin-right: 4px
+        border: 0
+        outline: 0
+        padding: 0 15px
+        background-color: #f4f4f4
+        font-size: 15px
+        font-family: "Lato"
+        color: #666666
+    &__btn-apply
+        +reset-btn
+        flex: 1
+        background: #fd9100
+        text-transform: uppercase
+        color: #fff
+        font-weight: 600
+        cursor: pointer
+    &__total
+        width: 100%
+    &__total-group
+        margin-bottom: 10px
+        display: flex
+        align-items: center
+    &__total-title
+        flex-basis: 70%
+        margin-right: 4px
+        font-size: 16px
+        color: #666666
+        font-weight: 600
+        text-align: right
+    &__total-description
+        text-align: right
+        flex: 1
+        &_promocode
+            font-size: 16px
+            font-weight: 900
+            color: #111
+        &_delivery
+            text-transform: uppercase
+            color: #333333
+            font-weight: 900
+            font-size: 16px
+        &_total
+            text-transform: uppercase
+            font-size: 18px
+            font-weight: 900
+    &__btn-with-check
+        max-width: 270px
+        margin-left: auto
+    &__btn-submit
+        width: 100%
+        margin-bottom: 25px
+    &__custom-input
+        display: none
+        &:checked
+            + label
+                &::after
+                    opacity: 1
+    &__custom-label
+        position: relative
+        display: block
+        padding-left: 30px
+        font-size: 13px
+        &:hover
+            cursor: pointer
+        &::before
+            content: ""
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid #dddddd
+        &::after
+            content: ""
+            position: absolute
+            top: 51%
+            transform: translateY(-50%)
+            left: 4px
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background-color: $orange
+            opacity: 0
+            transition: all .3s ease
+
+
+
+.checkout-form
+    &__cities
+        display: flex
+        justify-content: center
+        align-content: center
+    &__header-input
+        display: none
+        &:checked
+            + label
+                background-color: #f4f4f4
+    &__header-label
+        padding: 20px
+        flex-basis: 240px
+        text-align: center
+        font-size: 14px
+        font-weight: 900
+        color: #111
+        background: #fff
+        transition: all .3s ease
+        cursor: pointer
+        &:hover
+            background-color: #fafafa
+    &__city-content
+        display: flex
+        flex-wrap: wrap
+        padding: 35px 35px 35px 25px
+        background: #f4f4f4
+        overflow: hidden
+    &__table
+        display: none
+        flex-direction: column
+        flex-basis: 65%
+        margin-right: 60px
+        &.active
+            display: flex
+    &__header
+        display: flex
+        padding: 0 20px 10px 65px
+    &__header-text
+        color: #6f6f6f
+        &_service
+            flex-basis: 45%
+        &_date
+            flex-basis: 40%
+        &_price
+            flex: 1
+            text-align: left
+        &_md
+            display: none
+    &__body
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            right: -30px
+            bottom: 0
+            width: 1px
+            background-color: #d7d7d7
+    &__body-input
+        display: none
+        &:checked
+            + label
+                border-color: #fd9100
+            + label::after
+                opacity: 1
+    &__label
+        position: relative
+        display: flex
+        align-items: center
+        transition: all .3s ease
+        padding: 25px 20px 25px 65px
+        height: 95px
+        border: 1px solid transparent
+        &:hover
+            background-color: #fff8ee
+            cursor: pointer
+        &::before
+            content: ""
+            position: absolute
+            top: 48%
+            transform: translateY(-50%)
+            left: 20px
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid #dddddd
+        &::after
+            content: ""
+            position: absolute
+            top: 48%
+            transform: translateY(-50%)
+            left: 24px
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background-color: $orange
+            opacity: 0
+            transition: all .3s ease
+    &__label-text
+        &_service
+            flex-basis: 45%
+            padding-right: 35px
+        &_date
+            flex-basis: 40%
+            font-weight: 900
+        &_price
+            flex: 1
+            text-align: left
+            font-weight: 900
+    &__form
+        flex: 1
+        padding-top: 35px
+    &__footer
+        display: flex
+        flex-wrap: wrap
+        margin: 40px auto 0 auto
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            top: -20px
+            left: -100vw
+            padding: 0 20px
+            width: 200vw
+            margin: 0 auto
+            height: 1px
+            background-color: #d7d7d7
+        &-title
+            margin-right: 40px
+            font-weight: 900
+        &-input
+            display: none
+            &:checked
+                + label
+                    &::after
+                        opacity: 1
+        &-label
+            position: relative
+            padding-left: 30px
+            &:hover
+                cursor: pointer
+            &::before
+                content: ""
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                width: 14px
+                height: 14px
+                border-radius: 50%
+                border: 2px solid #dddddd
+            &::after
+                content: ""
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 4px
+                width: 10px
+                height: 10px
+                border-radius: 50%
+                background-color: $orange
+                opacity: 0
+                transition: all .3s ease
+            &:not(:last-child)
+                margin-right: 20px
+                
+.checkout
+    &__wrapper
+        margin-bottom: 50px
+    &__description-text
+        margin-bottom: 30px
+    &__form
+        margin-bottom: 65px
+    &__payment
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        max-width: 370px
+        margin-left: auto
+
+@media only screen and (max-width: 1100px)
+    // 
+
+@media only screen and (max-width: 992px) 
+    .payment__total-title
+        font-size: 14px
+    .payment__total-description_promocode
+        font-size: 14px
+    .payment__total-description_delivery
+        font-size: 14px
+    .payment__input
+        font-size: 14px
+    .payment__btn-apply
+        font-size: 12px
+    .checkout-form__body::before
+        display: none
+    .checkout-form__table
+        flex-basis: 100% 
+        margin-right: 0
+    .checkout-form__header-label
+        flex-basis: 20%
+        padding: 10px
+    .checkout-form__label
+        height: 50px
+    .checkout-form__city-content
+        padding: 15px 25px
+    .checkout-form__header-text
+        font-size: 14px
+    .checkout-form__label-text
+        font-size: 13px
+    .checkout-form__form
+        max-width: 600px
+    .checkout-form__footer
+        flex-basis: 100%
+    .checkout-form__footer-title
+        font-size: 14px
+    .checkout-form__footer-label
+        font-size: 13px
+
+@media only screen and (max-width: 768px) 
+    .checkout-form__header-label
+        flex-basis: auto
+        max-width: 150px
+        font-size: 13px
+    .checkout-form__city-content
+        padding: 10px
+    .checkout-form__header
+        padding: 0 10px 10px 30px
+    .checkout-form__header-text
+        font-size: 12px
+    .checkout-form__label-text
+        font-size: 12px
+    .checkout-form__label
+        padding: 10px 10px 10px 30px
+        height: 45px
+        &::before
+            left: 6px
+            width: 10px
+            height: 10px
+        &::after
+            left: 10px
+            width: 5px
+            height: 5px
+    .checkout-form__header-text_lg
+        display: none
+    .checkout-form__header-text_md
+        display: block
+
+@media only screen and (max-width: 576px) 
+    .payment__input
+        height: 35px
+    .payment__btn-apply
+        height: 35px
+        padding: 0 10px
+        font-size: 11px
+    .payment__total-title,
+    .payment__custom-label,
+    .payment__input
+        font-size: 12px
+    .checkout-form__header-label
+        flex-grow: 1
+        max-width: none
+        font-size: 11px
+    .checkout-form__header
+        padding-left: 30px
+    .checkout-form__header-text
+        font-size: 10px
+    .checkout-form__label-text
+        font-size: 10px
+    .checkout-form__header-text_service
+        flex-basis: 60%
+    .checkout-form__label-text_service
+        flex-basis: 60%
+    .checkout-form__header-text_date
+        flex-basis: 20%
+    .checkout-form__label-text_date
+        flex-basis: 20%
+    .checkout-form__label-text_service
+        padding-right: 10px
+    .checkout-form__label-text_price
+        text-align: center
+    .checkout-form__city-content
+        padding-bottom: 0
+    .checkout-form__footer-title
+        margin-bottom: 10px
+    .checkout-form__footer-label
+        flex-basis: 100%
+        margin-bottom: 10px
+        font-size: 12px
+    .checkout__form
+        margin-bottom: 30px
+    
+@media only screen and (max-width: 480px) 
+    // 
+
+@media only screen and (max-width: 380px) 
+    .checkout-form__label-text
+        font-size: 9px

@@ -1,0 +1,167 @@
+.main-section
+    &__wrapper
+        margin-bottom: 90px
+    &__title
+    &__image-with-content
+        position: relative
+        &::after
+            content: ""
+            clear: both
+            display: table
+    &__image-with-content-img-wrapper
+        max-width: 40%
+        float: left
+        margin: 0 30px 30px 0
+    &__image-with-content-img
+
+    &__image-with-content-content
+
+    &__image-with-content-title-1
+        font-weight: 900
+        padding-top: 10px
+        margin-bottom: 20px
+        line-height: 1
+    &__image-with-content-text
+        margin-bottom: 30px
+    &__article
+        margin-bottom: 30px
+        &-title-2
+            font-weight: 600
+            margin-bottom: 5px
+        &-text
+            margin-bottom: 30px
+        &-slider
+            display: flex
+            align-items: stretch
+            margin-bottom: 40px
+            &-item
+            &.owl-carousel .owl-stage
+                display: flex
+            &.owl-carousel .owl-item
+                display: flex
+            &.owl-carousel .owl-item img
+                object-fit: cover
+            > div.owl-nav
+                height: 0
+                margin: 0
+                position: absolute
+                top: 45%
+                transform: translateY(-50%)
+                left: -60px
+                right: -60px
+                display: flex
+                justify-content: space-between
+                font-size: 30px
+            .owl-nav [class*=owl-]:hover
+                color: #000
+                outline: none
+            &.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot
+                margin: 0
+        &-list
+            +reset-ul
+            margin-bottom: 30px
+            &_dots
+                .main-section__article-list-item
+                    padding-left: 20px
+                    position: relative
+                    line-height: 1.65
+                    &::before
+                        content: ""
+                        position: absolute
+                        top: 9px
+                        left: 0
+                        width: 6px
+                        height: 6px
+                        border-radius: 50%
+                        background-color: #fd9100
+            &_numeric
+                counter-reset: item
+                .main-section__article-list-item
+                    position: relative
+                    padding-left: 20px
+                    &::before
+                        content: counter(item) "."
+                        position: absolute
+                        top: 0
+                        left: 0
+                        font-weight: 900
+                        counter-increment: item
+            &-item
+                font-size: 14px
+        &-title-3
+            font-weight: 600
+            margin-bottom: 10px
+    &__video
+
+@media only screen and (max-width: 1350px) 
+    .main-section__article-slider
+        width: 90%
+        margin-left: auto
+        margin-right: auto
+
+@media only screen and (max-width: 992px) 
+    .main-section__wrapper
+        margin-bottom: 60px
+    .main-section__image-with-content-img-wrapper
+        margin: 0 15px 15px 0
+    .main-section__image-with-content-title-1
+        font-size: 20px
+        margin-bottom: 15px
+    .main-section__article-title-2
+        font-size: 18px
+    .main-section__article-title-3
+        font-size: 16px
+    .main-section__article-slider.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot
+        margin: 0
+    .main-section__article-slider>div.owl-nav
+        left: -30px
+        right: -30px
+    .main-section__article-slider
+        width: 90%
+        margin-left: auto
+        margin-right: auto
+    
+@media only screen and (max-width: 768px) 
+    .main-section__wrapper
+        margin-bottom: 30px
+    .main-section__image-with-content-title-1
+        font-size: 18px
+        padding-top: 0
+        margin-bottom: 10px
+    .main-section__article-title-2
+        font-size: 16px
+    .main-section__article-title-3
+        font-size: 15px
+    .main-section__image-with-content-text
+        margin-bottom: 20px
+    .main-section__article-slider
+        margin-bottom: 30px
+        
+@media only screen and (max-width: 576px) 
+    .main-section__article-slider
+        margin-bottom: 0
+        width: 100%
+        > div.owl-nav
+            height: 65px
+            position: relative
+            top: unset
+            transform: unset
+            width: 85px
+            margin: 0 auto
+            left: unset
+            right: unset
+            display: flex
+            justify-content: space-between
+            font-size: 30px
+            .owl-nav button.owl-next, .owl-nav button.owl-prev, button.owl-dot
+                margin: 0
+            .owl-nav [class*=owl-]:hover
+                color: #000 
+                background: transparent
+                outline: none
+
+@media only screen and (max-width: 480px)
+    .main-section__image-with-content-title-1
+        font-size: 16px
+    .main-section__image-with-content-img-wrapper
+        width: 35% 

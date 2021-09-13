@@ -1,0 +1,249 @@
+.promo
+    &__wrapper
+        margin: 0 auto 30px auto
+        display: flex
+    &__item
+        flex-basis: 50%
+        max-width: 50%
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        padding: 55px 30px 30px 85px
+        height: 330px
+        box-sizing: border-box
+        &_sm
+            display: none
+        &_first
+            background: url(../images/dest/static/banner-1.jpg) no-repeat center / cover
+            margin-right: 15px
+            padding: 60px 95px 60px 100px
+        &_second
+            background: url(../images/dest/static/banner-2.jpg) no-repeat center / cover
+            margin-left: 15px
+            padding: 80px 100px 60px 100px
+    &__item-content
+        position: relative
+        text-align: left
+        width: 100%
+        padding-right: 60px
+        &::before
+            content: "\e802"
+            position: absolute
+            font-family: fontello
+            font-weight: 300
+            top: 50%
+            transform: translateY(-50%)
+            right: 0
+            color: #fff
+            font-size: 40px
+            line-height: 1
+    &__item-text
+        color: #fff
+        font-size: 52px
+        line-height: 0.981
+        letter-spacing: 2px
+        font-weight: 900
+        margin-bottom: 20px
+        white-space: nowrap
+        &_strong
+            color: $orange
+        &_small
+            font-size: 36px
+            font-weight: 900
+    &__item-form-group
+        width: 100%
+        display: flex
+        align-items: center
+    &__item-input
+        border: none
+        display: inline-block
+        height: 50px
+        flex-basis: 58%
+        width: 58%
+        padding: 0 30px
+        margin: 0 6px 0 0
+        font-size: 24px
+        color: rgb(17, 17, 17)
+        font-weight: bold
+        line-height: 1
+        text-align: left
+    &__item-label
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        text-align: center
+        height: 50px
+        flex-basis: 40%
+        width: 40%
+        flex: 1
+        margin: 0
+        padding: 0 15px
+        font-size: 14px
+        background-color: $orange
+        color: rgb(17, 17, 17)
+        font-weight: bold
+        text-transform: uppercase
+        white-space: nowrap
+        transition: all .3s ease
+        &:hover
+            box-shadow: -6.691px 7.431px 20px 0px rgba(253, 145, 0, 0.2)
+            cursor: pointer
+
+@media only screen and (max-width: 1750px) 
+    .promo__item_first
+        padding: 60px 30px 60px 30px
+    .promo__item-content
+        max-width: 80%
+        margin: 0 auto
+        &::before
+            right: 0
+    .promo
+        &__item
+            height: 250px
+            &-text
+                font-size: 34px
+                &_small
+                    font-size: 28px
+            &-content::before
+                font-size: 30px
+
+
+@media only screen and (max-width: 1500px) 
+    .promo__item_second
+        padding: 60px 30px 60px 30px
+    .promo__item-content::before
+        right: -20px
+
+@media only screen and (max-width: 1400px) 
+    .promo
+        &__item
+            &-form-group
+                display: flex
+            &-input
+                font-size: 16px
+                width: 40%
+                height: 40px
+            &-label
+                padding: 0 10px
+                width: 40% 
+                height: 40px
+                line-height: 40px
+                font-size: 12px
+    .promo__item
+        &-content
+            width: 100%
+        &-text_small
+            white-space: nowrap
+            font-size: 24px
+
+@media only screen and (max-width: 1300px) 
+    .promo__item-content
+        max-width: 100%
+        width: 100%
+        padding: 0 0 0 10px
+        &::before
+            right: 0
+
+@media only screen and (max-width: 1200px) 
+    .promo__item-input
+        padding: 0 10px
+        font-size: 12px 
+
+@media only screen and (max-width: 1100px) 
+    .promo__item-text
+        font-size: 26px
+        margin-bottom: 10px
+        &_small
+            font-size: 18px
+            margin-bottom: 0
+    .promo__item-content
+        max-width: 80%
+        margin: 0 auto
+        padding-right: 40px
+        padding-left: 0
+        &::before
+            font-size: 20px
+            right: -30px
+    .promo__item 
+        height: 165px
+        padding: 30px
+
+@media only screen and (max-width: 992px) 
+    .promo__item
+        height: 135px
+        &-content
+            max-width: 100%
+            &::before
+                font-size: 16px
+                right: 0
+    .promo__item-input
+        height: 35px
+    .promo__item-label
+        height: 35px
+        font-size: 11px
+        white-space: unset
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        line-height: 1.3
+
+@media only screen and (max-width: 860px)
+    .promo__item-text
+        font-size: 20px
+        &_small
+            font-size: 15px
+            letter-spacing: 1px  
+
+@media only screen and (max-width: 768px) 
+    .promo
+        &__item-content
+            margin-bottom: 30px
+            padding: 0
+            text-align: center
+            &::before
+                display: none
+        &__item-text
+            font-size: 24px
+            margin-bottom: 0
+        &__item_first
+            display: none
+        &__item_second
+            display: none
+        &__item_sm
+            display: block
+            height: auto
+            min-height: 335px
+            flex-basis: 100%
+            max-width: 100%
+            padding: 35px 20px 115px 20px
+            background: url(../images/dest/static/banner-lg.jpg) no-repeat center / cover
+        &__item-form-group
+            flex-direction: column
+            align-items: center
+            max-width: 300px
+            margin: 0 auto
+        &__item-input
+            margin-right: 0
+            margin-bottom: 20px
+            text-align: center
+            width: 100%
+            height: 34px
+            min-height: 34px
+        &__item-label
+            width: 100%
+            min-height: 34px
+            height: 34px
+        &__item-text_small
+            font-size: 18px
+            font-weight: 300
+
+@media only screen and (max-width: 576px)
+    .promo__wrapper
+        margin-bottom: 20px
+
+@media only screen and (max-width: 380px) 
+    .promo__item-text
+        font-size: 18px
+        margin-bottom: 5px
+        &_small
+            font-size: 14px 

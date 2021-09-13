@@ -1,0 +1,284 @@
+*
+    box-sizing: border-box
+
+input
+    box-sizing: border-box
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+
+
+input[type=number] 
+    -moz-appearance: textfield
+
+::placeholder
+    color: #666
+
+::selection
+    background-color: $accent
+    color: #fff
+
+img
+    max-width: 100%
+    height: auto
+
+h1,h2,h3,h4,h5,h6,p
+    margin: 0
+
+input, textarea
+    outline: none
+    &:focus:required:invalid
+        border-color: #ed2121
+    &:required:valid
+        border-color: green
+	
+body 
+    opacity: 1
+    visibility: visible
+
+html, body
+    margin: 0
+    font-family: $lato
+    font-size: $fontsize
+    min-width: 320px
+    position: relative
+    line-height: 1.65
+    overflow-x: hidden
+    color: $textcolor
+
+.site-overlay
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,.7)
+    transition: all .3s ease
+    z-index: -1
+    opacity: 0
+    visibility: hidden
+    &.active
+        z-index: 150
+        opacity: 1
+        visibility: visible
+    
+.aspect-ratio
+    position: relative
+    width: 100%
+    height: 0
+    padding-bottom: 61%
+    iframe
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+        top: 0
+    &_map
+        padding-bottom: 31%
+
+.wrapper
+    max-width: 1210px
+    margin-left: auto
+    margin-right: auto
+    padding-left: 20px
+    padding-right: 20px
+
+.wrapper_lg
+    max-width: 1780px
+.wrapper_md
+    max-width: 1210px
+
+.site-logo
+    &__link
+    &__img
+
+.site-logo-large
+    &__link
+    &__img
+
+.site-title
+    position: relative
+    padding-bottom: 33px
+    margin-top: 50px
+    margin-bottom: 45px
+    line-height: 0.833
+    font-size: 36px
+    font-weight: 900
+    color: rgb(17, 17, 17)
+    text-align: center
+    &::before
+        content: ""
+        position: absolute
+        bottom: 0
+        height: 8px
+        width: 60px
+        background-color: $orange
+        margin: 0 auto
+        left: 0
+        right: 0
+
+.site-text
+    font-size: 16px
+    color: rgb(1,1,1)
+    &_center 
+        text-align: center
+    &_bold
+        font-weight: 600
+    &_lg
+        font-size: 18px
+        color: rgb(1,1,1)
+    &_small
+        font-size: 14px
+        color: rgb(1,1,1)
+
+.site-more
+    +reset-btn
+    +reset-link
+    display: inline-flex
+    align-items: center
+    text-transform: uppercase
+    font-size: 14px
+    font-family: "Lato"
+    color: rgb(17, 17, 17)
+    font-weight: bold
+    position: relative
+    padding-right: 10px
+    cursor: pointer
+    &::before
+        content: "\e802"
+        position: absolute
+        right: -15px
+        font-family: fontello
+        color: $orange
+        font-size: 14px
+        font-weight: 300
+
+.site-btn
+    +reset-link
+    background: transparent
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 13px 25px
+    border: 2px solid $orange
+    font-size: 14px
+    line-height: 1
+    font-weight: bold
+    text-transform: uppercase
+    color: $accent
+    transition: all .3s ease
+    cursor: pointer
+    white-space: nowrap
+    &:hover
+        background-color: $orange
+        color: #fff
+    &_orange 
+        background-color: $orange
+        color: #fff
+        box-shadow: -6.691px 7.431px 20px 0px rgba(253, 145, 0, 0.2)
+        &:hover
+            background: transparent
+            color: $accent
+    &_max-content
+        display: block
+        width: max-content
+        margin: 0 auto
+    &_wide
+        padding: 13px 55px
+    &_banner
+        font-size: 15px
+        background-color: $orange
+        &:hover
+            box-shadow: -6.691px 7.431px 20px 0px rgba(253, 145, 0, 0.2)
+    &_grey
+        border: 2px solid #dddddd
+        &:hover
+            border-color: $orange
+
+
+@media only screen and (max-width: 1300px) 
+    .site-logo-large
+        &__link
+        &__img
+            width: 130px
+            height: auto
+@media only screen and (max-width: 1200px) 
+    .site-text
+        font-size: 14px
+    .site-title
+        font-size: 24px
+        padding-bottom: 19px
+        margin-top: 30px
+        margin-bottom: 30px
+        &::before
+            height: 4px
+            width: 24px
+    .wrapper
+        max-width: 1140px  
+        &_lg
+            max-width: 1140px  
+        &_md
+            max-width: 1140px  
+@media only screen and (max-width: 992px) 
+    .site-logo
+        &__link
+        &__img
+            width: 95px
+    .site-title
+        font-size: 20px
+    .site-text
+    .wrapper
+        max-width: 960px  
+        &_lg
+            max-width: 960px  
+        &_md
+            max-width: 960px  
+    .site-btn
+        font-size: 12px
+        padding: 8px 14px
+
+@media only screen and (max-width: 768px) 
+    .wrapper
+        max-width: 720px 
+        &_lg
+            max-width: 720px  
+        &_md
+            max-width: 720px  
+        .site-text
+            font-size: 12px
+        .site-more
+            font-size: 12px
+
+@media only screen and (max-width: 576px) 
+    .site-title
+        font-size: 16px
+        padding-bottom: 19px
+        margin-bottom: 20px
+    .wrapper
+        max-width: 540px  
+        &_lg
+            max-width: 540px  
+        &_md
+            max-width: 540px  
+    .site-btn
+        font-size: 10px
+    .aspect-ratio_map
+        padding-bottom: 61%
+
+@media only screen and (max-width: 480px) 
+    .wrapper
+        max-width: 100%  
+        padding-left: 15px
+        padding-right: 15px
+        &_lg
+            max-width: 100%   
+            padding-left: 15px
+            padding-right: 15px
+        &_md
+            max-width: 100%  
+            padding-left: 15px
+            padding-right: 15px

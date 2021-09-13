@@ -1,0 +1,179 @@
+.about-reviews
+    &__wrapper
+        margin: 0 auto 80px auto
+        text-align: center
+    &__title
+    &__slider
+        margin-bottom: 45px
+        &.owl-carousel .owl-stage
+            display: flex !important
+        &.owl-theme .owl-stage
+            display: flex !important
+        &.owl-carousel .owl-item,
+        &.owl-theme .owl-item
+            display: flex
+    &__list
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        flex-wrap: wrap
+        margin: 0 -15px -45px -15px
+    &__item
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        align-self: stretch
+        padding: 35px
+        padding-bottom: 0
+        background-color: $lightgrey
+        transition: all .3s ease
+        text-align: left
+        &_flex
+            margin: 0 15px 45px 15px 
+            flex-basis: 30%
+        &:hover
+            box-shadow: -6.691px 7.431px 20px 0px rgba(135, 135, 135, 0.2)
+    &__name
+        font-size: 20px
+        font-weight: 900
+        color: rgb(17, 17, 17)
+        line-height: 1.25
+        margin-bottom: 15px
+        text-align: left
+    &__text
+        font-size: 16px
+        color: rgb(17, 17, 17)
+        margin-bottom: 15px
+        line-height: 1.25
+        text-align: left
+        display: -webkit-box
+        -webkit-line-clamp: 7
+        -webkit-box-orient: vertical
+        overflow: hidden
+        min-height: 140px
+    &__more
+        text-align: left
+        margin-bottom: 35px
+        &::before
+            padding-bottom: 2px
+    &__images
+        +reset-ul
+        display: flex
+        flex-wrap: wrap
+        margin-top: auto
+        &-item
+            margin-bottom: 20px
+            &:not(:last-child)
+                margin-right: 15px
+        &-link
+            display: block
+            width: 70px
+            height: 70px
+        &-img
+            max-width: 100%
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__btn
+        margin: 0 auto
+    &__slider
+        > div.owl-nav
+            height: 0
+            margin: 0
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: -30px
+            right: -30px
+            display: flex
+            justify-content: space-between
+            font-size: 30px
+        .owl-nav [class*=owl-]:hover
+            color: #000
+            outline: none
+
+@media only screen and (max-width: 1300px) 
+    // 
+@media only screen and (max-width: 1200px) 
+    .about-reviews__slider
+        max-width: 90%
+        margin-left: auto
+        margin-right: auto
+        &.owl-carousel .owl-nav button.owl-next, 
+        &.owl-carousel .owl-nav button.owl-prev, 
+        &.owl-carousel button.owl-dot
+            margin: 0
+    .about-reviews__item
+        padding: 20px 15px
+        padding-bottom: 0
+    .about-reviews__name
+        font-size: 16px
+@media only screen and (max-width: 992px) 
+    .about-reviews__list
+        margin-left: -7px
+        margin-right: -7px
+        margin-bottom: -20px
+    .about-reviews__item_flex
+        flex-basis: calc(33% - 14px)
+        margin-left: 7px
+        margin-right: 7px
+        margin-bottom: 20px
+
+@media only screen and (max-width: 768px) 
+    .about-reviews__name
+        font-size: 14px
+    .about-reviews__text
+        min-height: 100px
+    .about-reviews__more
+        margin-bottom: 20px
+    .about-reviews__list
+        margin-left: -5px
+        margin-right: -5px
+    .about-reviews__item_flex
+        flex-basis: calc(50% - 10px)
+        margin-left: 5px
+        margin-right: 5px
+        margin-bottom: 20px
+
+@media only screen and (max-width: 576px) 
+    .about-reviews__wrapper
+        margin-bottom: 35px
+    .about-reviews__slider
+        max-width: 100%
+        margin-bottom: 10px
+        > div.owl-nav
+            height: 65px
+            position: relative
+            top: unset
+            transform: unset
+            width: 85px
+            margin: 0 auto
+            left: unset
+            right: unset
+            display: flex
+            justify-content: space-between
+            font-size: 30px
+        .owl-nav button.owl-next, .owl-nav button.owl-prev, button.owl-dot
+            margin: 0
+        .owl-nav [class*=owl-]:hover
+            color: #000 
+            background: transparent
+            outline: none
+
+@media only screen and (max-width: 480px) 
+    .about-reviews__list
+        justify-content: center
+        margin-left: 0
+        margin-right: 0
+        margin-bottom: 60px
+    .about-reviews__item_flex
+        margin-left: 0
+        margin-right: 0
+        margin-bottom: 20px
+        flex-basis: 100%
+        max-width: 320px
+    .about-reviews__images-item:not(:last-child)
+        margin-right: 5px
+    .about-reviews__images-link
+        width: 35px
+        height: 35px

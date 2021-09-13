@@ -1,0 +1,110 @@
+.contact-form
+    &__inputs
+    &__group
+        margin-bottom: 25px
+        display: flex
+        &_file
+            background-color: #F4F4F4
+            height: 60px
+            display: flex
+            align-items: center
+            justify-content: flex-end
+    &__textarea
+        border: 0
+        outline: none
+        padding: 15px
+        background-color: #fff
+        font-size: 15px
+        font-family: "Lato"
+        color: rgb(102, 102, 102)
+    &__input
+        flex: 1
+        height: 40px
+        margin-right: 4px
+        border: 0
+        outline: none
+        padding: 0 15px
+        background-color: #fff
+        font-size: 15px
+        font-family: "Lato"
+        color: rgb(102, 102, 102)
+        transition: all .3s ease
+        &::placeholder
+            font-family: "Lato"
+        &_file
+            width: 0.1px
+            height: 0.1px
+            opacity: 0
+            overflow: hidden
+            position: absolute
+            z-index: -1
+            + label 
+                font-size: 1.25em
+                font-weight: 700
+                color: rgb(102, 102, 102)
+                transition: all .3s ease
+                font-size: 14px
+                padding: 0 20px
+                white-space: nowrap
+            &:focus + label,
+            + label:hover
+                background-color: transparent
+                outline: none
+            &:focus + label 
+            + label
+                cursor: pointer
+        &.invalid
+            color: #ed2121
+    &__label-icon
+        font-size: 20px
+        color: $orange
+        margin-left: 10px
+    &__icon
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 40px
+        height: 40px
+        background: #fff
+    &__description
+        &-title
+            font-weight: 900
+            margin-bottom: 5px
+        &-text
+            margin-bottom: 10px
+        &-link
+            color: #fd9100
+            font-weight: 700
+    &_leave-review
+        .contact-form__group
+            flex-basis: 100%
+        .contact-form__input
+            margin-right: 0
+        .contact-form__group_textarea
+            height: 200px
+
+@media only screen and (max-width: 992px) 
+    .contact-form__description-title
+        font-size: 14px
+    .contact-form__description-text
+        font-size: 14px
+    .contact-form__description-link
+        font-size: 14px
+
+@media only screen and (max-width: 576px) 
+    .contact-form__label-help
+        font-size: 13px
+    .contact-form__label-icon
+        font-size: 16px
+    .contact-form__input
+        height: 35px
+        font-size: 13px
+    .contact-form__textarea
+        font-size: 13px
+    .contact-form__icon
+        width: 35px
+        height: 35px
+    .contact-form__description-title,
+    .contact-form__description-text,
+    .contact-form__description-link
+        font-size: 12px

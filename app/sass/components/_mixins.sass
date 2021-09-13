@@ -1,0 +1,26 @@
+@mixin reset-ul
+	padding: 0
+	margin: 0
+	list-style-type: none
+
+@mixin reset-btn
+	padding: 0
+	margin: 0
+	list-style-type: none
+	background-color: transparent
+	border: 0
+	outline: 0
+
+@mixin reset-link
+	text-decoration: none
+	&:hover
+		text-decoration: none
+
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		font-display: swap
+		src: local($fname), url($furl) format('woff2')

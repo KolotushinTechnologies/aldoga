@@ -1,0 +1,136 @@
+.main-banner
+    &__wrapper
+        position: relative
+    &__carousel
+    &__item
+        position: relative
+        height: 680px
+    &__img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100% !important
+        height: 100% !important
+        object-fit: cover
+    &__img-logo
+        position: absolute
+        bottom: 50px
+        right: 50px
+        max-width: 100% !important
+        width: 100px !important
+    &__content
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        padding: 0 0 0 150px
+        max-width: 650px
+    &__top-text
+        margin-bottom: 40px
+        font-size: 18px
+        color: #fff
+        text-transform: uppercase
+        line-height: 1.333
+        text-align: left
+    &__main-text
+        margin-bottom: 55px
+        font-size: 43.358px
+        color: #fff
+        text-transform: uppercase
+        line-height: 1.333
+        text-align: left
+        font-weight: 800
+    &__btn
+    .owl-dots
+        position: absolute
+        margin: 0
+        bottom: 125px
+        left: 145px
+        .owl-dot
+            +reset-btn
+            transition: all .3s ease
+            span
+                width: 12px
+                height: 12px
+                border-radius: 50%
+                border: 2px solid $grey
+                background-color: transparent
+                transition: all .3s ease
+            &.active
+                span
+                    background-color: $orange
+                    border-color: $orange
+
+@media only screen and (max-width: 1400px) 
+    //
+@media only screen and (max-width: 1300px) 
+    .main-banner__item
+        height: 500px
+    .main-banner__main-text
+        font-size: 36px
+        margin-bottom: 25px
+    .main-banner__content
+        padding-left: 70px
+    .main-banner .owl-dots
+        left: 65px
+        bottom: 65px
+    .main-banner__img-logo
+        top: 50px
+        right: 50px
+
+@media only screen and (max-width: 1200px) 
+    // 
+@media only screen and (max-width: 1100px)
+    .main-banner__img-logo
+        top: 30px
+        right: 30px
+        width: 55px !important 
+@media only screen and (max-width: 992px) 
+    .main-banner
+        &__img-logo
+            top: 20px
+            right: 20px
+        &__item
+            height: 350px
+        &__top-text
+            font-size: 14px
+            margin-bottom: 20px
+        &__main-text
+            font-size: 24px
+            max-width: 280px 
+        .owl-dots 
+            bottom: 45px
+        .owl-dots .owl-dot span
+            width: 9px
+            height: 9px
+@media only screen and (max-width: 768px) 
+    // 
+@media only screen and (max-width: 576px) 
+    .main-banner
+        &__img-logo
+            top: 15px
+            right: 15px
+        &__content  
+            padding-left: 20px
+            top: unset
+            bottom: 45px
+        &__top-text
+            font-size: 12px
+            margin-bottom: 12px
+        &__main-text
+            font-size: 20px
+            margin-bottom: 20px
+        .owl-dots
+            bottom: 10px
+            right: 20px
+            text-align: right
+@media only screen and (max-width: 480px) 
+    .main-banner__main-text
+        font-size: 18px 

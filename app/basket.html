@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<title>Алдога - Корзина</title>
+		<meta name="description" content="Алдога описание" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="images/favicon.png" />
+		<style>
+			body {
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.3s ease, visible 0.3s ease;
+			}
+		</style>
+		<link rel="stylesheet" href="css/app.min.css" />
+	</head>
+
+	<body>
+		<header class="header header_border">
+			<div class="header__wrapper wrapper wrapper_lg">
+				<h2 class="header__logo site-logo">
+					<a href="index.html" class="site-logo__link"> <img src="./images/dest/logo.png" alt="Форелевое хозяйство Алдога" class="site-logo__img" /> </a>
+				</h2>
+
+				<ul class="header__list header-list">
+					<li class="header-list__item"><a href="catalog.html" class="header-list__link">Наша продукция</a></li>
+					<li class="header-list__item"><a href="#!" class="header-list__link">О Хозяйстве</a></li>
+					<li class="header-list__item"><a href="delivery-payment.html" class="header-list__link">Доставка и оплата</a></li>
+					<li class="header-list__item"><a href="news.html" class="header-list__link">Рецепты</a></li>
+					<li class="header-list__item"><a href="reviews.html" class="header-list__link">Отзывы</a></li>
+					<li class="header-list__item"><a href="contacts.html" class="header-list__link">Контакты</a></li>
+				</ul>
+
+				<div class="header__contact-bar contact-bar">
+					<div class="contact-bar__wrapper">
+						<a href="tel:89214504515" class="contact-bar__link">8 921 450 45 15</a> <button data-bind="modal_question_button" class="contact-bar__interactive-link">Задать вопрос</button>
+					</div>
+				</div>
+
+				<div id="basket" class="header__basket basket">
+					<div class="basket__wrapper">
+						<a href="#!" class="basket__icon icon-shop"> <span class="basket__count">10</span> </a>
+					</div>
+				</div>
+
+				<div class="header__status status">
+					<button id="statusBtn" class="status__wrapper"><span class="status__text">Статус заказа</span></button>
+					<!-- Выслать код -->
+					<div id="statusOverlay1" class="status__overlay">
+						<p class="status__title site-text_lg site-text_bold">Вход на сайт</p>
+						<p class="status__descr site-text_small">Введите свой номер телефона и мы вам вышлем на него смс с кодом для входа</p>
+						<div class="status__phone"><input id="statusInputGetCode" type="number" placeholder="Ваш телефон" class="status__phone-input" /> <span class="status__phone-icon icon-phone"></span></div>
+						<button id="statusBtnGetCode" class="status__btn site-btn">Выслать код</button>
+					</div>
+
+					<!-- Подтвердить код -->
+					<div id="statusOverlay2" class="status__overlay">
+						<p class="status__title site-text_lg site-text_bold">Вход на сайт</p>
+						<p class="status__descr site-text_small">Код подтверждения выслан на номер <span id="statusOverlayPhoneChecker">+7 800 555 35 35</span> .Введите его в поле ниже:</p>
+						<div class="status__phone"><input type="number" placeholder="Код подтверждения" class="status__phone-input" /></div>
+						<button class="status__btn site-btn">Войти</button>
+					</div>
+				</div>
+
+				<button id="hamburger" class="hamburger header__hamburger hamburger--vortex" type="button">
+					<span class="hamburger-box hamburger__box"> <span class="hamburger-inner hamburger__inner"></span> </span>
+				</button>
+
+				<div class="hamburger-overlay" id="hamburgerOverlay">
+					<ul class="hamburger-overlay__list">
+						<li class="hamburger-overlay__list-item"><a href="catalog.html" class="hamburger-overlay__list-link"> Наша продукция </a></li>
+						<li class="hamburger-overlay__list-item"><a href="#!" class="hamburger-overlay__list-link"> О Хозяйстве </a></li>
+						<li class="hamburger-overlay__list-item"><a href="delivery-payment.html" class="hamburger-overlay__list-link"> Доставка и оплата </a></li>
+						<li class="hamburger-overlay__list-item"><a href="news.html" class="hamburger-overlay__list-link"> Рецепты </a></li>
+						<li class="hamburger-overlay__list-item"><a href="reviews.html" class="hamburger-overlay__list-link"> Отзывы </a></li>
+						<li class="hamburger-overlay__list-item"><a href="contacts.html" class="hamburger-overlay__list-link"> Контакты </a></li>
+					</ul>
+					<div class="contact-bar hamburger-overlay__contact-bar">
+						<div class="contact-bar__wrapper">
+							<a href="tel:89214504515" class="contact-bar__link">8 921 450 45 15</a> <button data-bind="modal_question_button" class="contact-bar__interactive-link">Задать вопрос</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="basket-overlay" id="basketOverlay">
+					<ul class="basket-overlay__list">
+						<li class="basket-overlay__item">
+							<button class="basket-overlay__item-btn icon-cancel"></button>
+							<a href="#!" class="basket-overlay__item-link">
+								<img data-src="./images/dest/products/product_1.jpg" src="./images/dest/products/product_1-min.jpg" alt="" class="basket-overlay__item-img lazy" />
+								<div class="basket-overlay__item-content">
+									<p class="basket-overlay__item-content-name">Стейки форели</p>
+									<p class="basket-overlay__item-content-tags">Свежие, охлажденные</p>
+									<span class="basket-overlay__item-content-price">5500 Р</span>
+								</div>
+							</a>
+						</li>
+						<li class="basket-overlay__item">
+							<button class="basket-overlay__item-btn icon-cancel"></button>
+							<a href="#!" class="basket-overlay__item-link">
+								<img data-src="./images/dest/products/product_2.jpg" src="./images/dest/products/product_2-min.jpg" alt="" class="basket-overlay__item-img lazy" />
+								<div class="basket-overlay__item-content">
+									<p class="basket-overlay__item-content-name">Стейки форели</p>
+									<p class="basket-overlay__item-content-tags">Свежие, охлажденные</p>
+									<span class="basket-overlay__item-content-price">5500 Р</span>
+								</div>
+							</a>
+						</li>
+						<li class="basket-overlay__item">
+							<button class="basket-overlay__item-btn icon-cancel"></button>
+							<a href="#!" class="basket-overlay__item-link">
+								<img data-src="./images/dest/products/product_3.jpg" src="./images/dest/products/product_3-min.jpg" alt="" class="basket-overlay__item-img lazy" />
+								<div class="basket-overlay__item-content">
+									<p class="basket-overlay__item-content-name">Стейки форели</p>
+									<p class="basket-overlay__item-content-tags">Свежие, охлажденные</p>
+									<span class="basket-overlay__item-content-price">5500 Р</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="basket-overlay__total-price"><span class="basket-overlay__total-price-title">Итого:</span> <span class="basket-overlay__total-price-count">16 500 Р</span></div>
+					<div class="basket-overlay__btn-wrapper"><a href="basket.html" class="site-btn basket-overlay__btn">Оформить заказ</a></div>
+				</div>
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="main__wrapper">
+				<!-- Хлебные крошки -->
+				<div class="breadcrumb">
+					<ul class="breadcrumb__list wrapper">
+						<li class="breadcrumb__item"><a href="index.html" class="breadcrumb__link">Главная</a></li>
+						<li class="breadcrumb__item"><a href="basket.html" class="breadcrumb__link">Корзина</a></li>
+					</ul>
+				</div>
+
+				<!-- Оформление заказа -->
+				<div class="basket-orders">
+					<div class="basket-orders__wrapper wrapper wrapper_md">
+						<h2 class="site-title">Корзина</h2>
+						<div class="basket-orders__list">
+							<div class="basket-orders__table">
+								<div class="basket-orders__header">
+									<p class="basket-orders__header-title basket-orders__header-title_product">Товар</p>
+									<p class="basket-orders__header-title basket-orders__header-title_price">Цена</p>
+									<p class="basket-orders__header-title basket-orders__header-title_number">Количество</p>
+									<p class="basket-orders__header-title basket-orders__header-title_total">Итого</p>
+									<p class="basket-orders__header-title basket-orders__header-title_delete">Удалить</p>
+								</div>
+
+								<div class="basket-orders__content">
+									<div class="basket-orders__content-col basket-orders__content-col_product">
+										<img data-src="./images/dest/products/product_1.jpg" src="./images/dest/products/product_1.jpg" alt="" class="basket-orders__img lazy" />
+										<div class="basket-orders__description">
+											<p class="basket-orders__name">Стейки форели</p>
+											<p class="basket-orders__tags">свежие, охлажденные</p>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_price">3300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_number">
+										<div class="site-counter site-counter_basket">
+											<button class="site-counter__control site-counter__control_minus icon-minus"></button> <input type="number" value="1" class="site-counter__input" />
+											<button class="site-counter__control site-counter__control_plus icon-plus"></button>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_total">3300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_delete icon-cancel"></div>
+								</div>
+
+								<div class="basket-orders__content">
+									<div class="basket-orders__content-col basket-orders__content-col_product">
+										<img data-src="./images/dest/products/product_2.jpg" src="./images/dest/products/product_2.jpg" alt="" class="basket-orders__img lazy" />
+										<div class="basket-orders__description">
+											<p class="basket-orders__name">Стейки форели</p>
+											<p class="basket-orders__tags">свежие, охлажденные</p>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_price">2300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_number">
+										<div class="site-counter site-counter_basket">
+											<button class="site-counter__control site-counter__control_minus icon-minus"></button> <input type="number" value="1" class="site-counter__input" />
+											<button class="site-counter__control site-counter__control_plus icon-plus"></button>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_total">2300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_delete icon-cancel"></div>
+								</div>
+
+								<div class="basket-orders__content">
+									<div class="basket-orders__content-col basket-orders__content-col_product">
+										<img data-src="./images/dest/products/product_4.jpg" src="./images/dest/products/product_4.jpg" alt="" class="basket-orders__img lazy" />
+										<div class="basket-orders__description">
+											<p class="basket-orders__name">Стейки форели</p>
+											<p class="basket-orders__tags">свежие, охлажденные</p>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_price">300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_number">
+										<div class="site-counter site-counter_basket">
+											<button class="site-counter__control site-counter__control_minus icon-minus"></button> <input type="number" value="1" class="site-counter__input" />
+											<button class="site-counter__control site-counter__control_plus icon-plus"></button>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_total">300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_delete icon-cancel"></div>
+								</div>
+
+								<div class="basket-orders__content">
+									<div class="basket-orders__content-col basket-orders__content-col_product">
+										<img data-src="./images/dest/products/product_3.jpg" src="./images/dest/products/product_3.jpg" alt="" class="basket-orders__img lazy" />
+										<div class="basket-orders__description">
+											<p class="basket-orders__name">Стейки форели</p>
+											<p class="basket-orders__tags">свежие, охлажденные</p>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_price">1300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_number">
+										<div class="site-counter site-counter_basket">
+											<button class="site-counter__control site-counter__control_minus icon-minus"></button> <input type="number" value="1" class="site-counter__input" />
+											<button class="site-counter__control site-counter__control_plus icon-plus"></button>
+										</div>
+									</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_total">1300 Р</div>
+
+									<div class="basket-orders__content-col basket-orders__content-col_delete icon-cancel"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Оформление заказа -->
+				<div class="checkout">
+					<div class="checkout__wrapper wrapper wrapper_md">
+						<div class="site-title">Оформление заказа</div>
+						<p class="site-text checkout__description-text">
+							На данным момент мы доставляем нашу продукцию в три города: Москва, Санкт-Петербург и Петрозаводск. Ниже можно узнать ближайшую дату доставки для вашего города. Ещё какой-нибудь текст,
+							например, о возможности самовывоза или планов.
+						</p>
+
+						<div class="checkout-form checkout__form">
+							<div id="checkoutFormCities" class="checkout-form__cities">
+								<input class="checkout-form__header-input" checked type="radio" value="moscow" name="checkoutFormCity" id="checkoutFormMoscow" />
+								<label class="checkout-form__header-label" data-link="table1" for="checkoutFormMoscow">Москва </label>
+
+								<input class="checkout-form__header-input" type="radio" value="spb" name="checkoutFormCity" id="checkoutFormSPB" />
+								<label class="checkout-form__header-label" data-link="table2" for="checkoutFormSPB">Санкт-Петербург </label>
+
+								<input class="checkout-form__header-input" type="radio" value="petrozavodsk" name="checkoutFormCity" id="checkoutFormPetrozavodsk" />
+								<label class="checkout-form__header-label" data-link="table3" for="checkoutFormPetrozavodsk">Петрозаводск </label>
+							</div>
+
+							<div id="tableTabs" class="checkout-form__city-content">
+								<!-- 1 Москва -->
+								<div id="table1" class="checkout-form__table active">
+									<div class="checkout-form__header">
+										<p class="checkout-form__header-text checkout-form__header-text_service">Служба</p>
+										<p class="checkout-form__header-text checkout-form__header-text_date">
+											<span class="checkout-form__header-text_md">Дата</span> <span class="checkout-form__header-text_lg"> Ближайшая дата доставки </span>
+										</p>
+										<p class="checkout-form__header-text checkout-form__header-text_price">Стоимость</p>
+									</div>
+
+									<div class="checkout-form__body">
+										<input name="CheckoutFormSelectCity" checked id="checkoutFormPickup" type="radio" class="checkout-form__body-input" />
+
+										<!-- 1 MOSCOW -->
+										<label class="checkout-form__label" for="checkoutFormPickup">
+											<span class="checkout-form__label-text checkout-form__label-text_service">Самовывоз</span>
+											<span id="checkouPickupDate" class="checkout-form__label-text checkout-form__label-text_date">14.04.2020</span>
+											<span id="checkouPickupPrice" class="checkout-form__label-text checkout-form__label-text_price"> 0 Р </span>
+										</label>
+
+										<input name="CheckoutFormSelectCity" id="checkoutFormPDP" type="radio" class="checkout-form__body-input" />
+
+										<!-- 2 DPD -->
+										<label class="checkout-form__label" for="checkoutFormPDP">
+											<span class="checkout-form__label-text checkout-form__label-text_service">Курьером службы DPD до подъезда</span>
+											<span id="checkouDateDPD" class="checkout-form__label-text checkout-form__label-text_date">13.04.2020</span>
+											<span id="checkouPriceDPD" class="checkout-form__label-text checkout-form__label-text_price">450 Р</span>
+										</label>
+
+										<input name="CheckoutFormSelectCity" id="checkoutFormYandex" type="radio" class="checkout-form__body-input" />
+
+										<!-- 3 Yandex -->
+										<label class="checkout-form__label" for="checkoutFormYandex">
+											<span class="checkout-form__label-text checkout-form__label-text_service">Курьером Яндекс.Еда до подъезда</span>
+											<span id="checkouDateYandex" class="checkout-form__label-text checkout-form__label-text_date">14.04.2020</span>
+											<span id="checkouPriceYandex" class="checkout-form__label-text checkout-form__label-text_price">500 Р</span>
+										</label>
+									</div>
+								</div>
+
+								<form class="checkout-form__form contact-form">
+									<div class="contact-form__group"><input placeholder="Как вас зовут?" type="text" class="contact-form__input" /> <span class="contact-form__icon icon-user"></span></div>
+
+									<div class="contact-form__group"><input placeholder="Ваш email адрес" type="email" class="contact-form__input" /> <span class="contact-form__icon icon-envelope-open"></span></div>
+
+									<div class="contact-form__group"><input placeholder="Телефон для связи" type="number" class="contact-form__input" /> <span class="contact-form__icon icon-phone"></span></div>
+
+									<div class="contact-form__description">
+										<p class="contact-form__description-title">Текущий пункт самовывоза:</p>
+										<p class="contact-form__description-text">ул. Московская, 50, ТЦ “Московский”, 2 этаж, служба доставки Boxberry</p>
+										<a href="!#" class="contact-form__description-link">Выбрать пункт доставки</a>
+									</div>
+								</form>
+
+								<div class="checkout-form__footer">
+									<p class="checkout-form__footer-title">Оплата:</p>
+
+									<!-- 1 -->
+									<input name="CheckoutFormPayment" checked id="payment1" type="radio" class="checkout-form__footer-input" />
+									<label for="payment1" class="checkout-form__footer-label"> Картой на сайте </label>
+
+									<!-- 2 -->
+									<input name="CheckoutFormPayment" checked id="payment2" type="radio" class="checkout-form__footer-input" />
+									<label for="payment2" class="checkout-form__footer-label"> Картой курьеру </label>
+
+									<!-- 3 -->
+									<input name="CheckoutFormPayment" checked id="payment3" type="radio" class="checkout-form__footer-input" />
+									<label for="payment3" class="checkout-form__footer-label"> Наличными курьеру </label>
+								</div>
+							</div>
+						</div>
+
+						<div class="checkout__payment payment">
+							<div id="promoBasket" class="payment__group"><input placeholder="Есть промокод?" type="text" class="payment__input" /> <button class="payment__btn-apply">Применить</button></div>
+							<div class="payment__total">
+								<div class="payment__total-group">
+									<p class="payment__total-title">Ваша скидка по промокоду</p>
+									<p class="payment__total-description payment__total-description_promocode">-300 Р (10%)</p>
+								</div>
+								<div class="payment__total-group">
+									<p class="payment__total-title">Стоимость доставки</p>
+									<p class="payment__total-description payment__total-description_delivery">550 Р</p>
+								</div>
+								<div class="payment__total-group">
+									<p class="payment__total-title">Итого к оплате</p>
+									<p class="payment__total-description payment__total-description_total">3000 Р</p>
+								</div>
+							</div>
+							<div class="payment__btn-with-check">
+								<button data-bind="modal_success_button" class="payment__btn-submit site-btn">Перейти к оплате</button>
+								<input name="totalPaymentName" id="totalPayment" type="checkbox" class="payment__custom-input" />
+								<label for="totalPayment" class="payment__custom-label"> Я СОГЛАСЕН на обработку и хранение моих персональных данных </label>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="promo">
+					<div class="promo__wrapper wrapper wrapper_lg">
+						<div class="promo__item promo__item_sm">
+							<div class="promo__item-content">
+								<p class="promo__item-text">Получите скидку <strong class="promo__item-text promo__item-text_strong">10%</strong></p>
+								<p class="promo__item-text promo__item-text_small">на первый заказ по промокоду</p>
+							</div>
+
+							<form id="promoBannerForm" class="promo__item-form-group">
+								<input readonly id="promoBannerFormPromocode" value="PROMO1ALDOGA" placeholder="PROMO1ALDOGA" type="text" class="promo__item-input" />
+								<label for="promoBannerFormPromocode" class="promo__item-label">скопировать промокод </label>
+							</form>
+						</div>
+
+						<div class="promo__item promo__item_first">
+							<div class="promo__item-content">
+								<p class="promo__item-text">Получите скидку <strong class="promo__item-text promo__item-text_strong">10%</strong></p>
+								<p class="promo__item-text promo__item-text_small">на первый заказ по промокоду</p>
+							</div>
+						</div>
+
+						<div class="promo__item promo__item_second">
+							<form id="promoBannerFormSmall" class="promo__item-form-group">
+								<input readonly id="promoBannerFormPromocodeSmall" value="PROMO1ALDOGA" placeholder="PROMO1ALDOGA" type="text" class="promo__item-input" />
+								<label for="promoBannerFormPromocodeSmall" class="promo__item-label">скопировать промокод </label>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="footer__wrapper wrapper wrapper_lg">
+				<div class="footer__content">
+					<ul class="footer__contact-list contact-list">
+						<li class="contact-list__item"><a href="tel:89214504515" class="contact-list__link contact-list__link_phone">8 921 450-45-15</a></li>
+						<li class="contact-list__item"><a href="mailto:fish@aldoga.pro" class="contact-list__link contact-list__link_mail">fish@aldoga.pro</a></li>
+						<li class="contact-list__item"><a href="#!" class="contact-list__link contact-list__link_address">Карелия, Лахденпохский р-н, пос. Тиурула</a></li>
+						<li class="contact-list__item contact-list__item_socials">
+							<a href="#!" class="contact-list__link contact-list__link_socials contact-list__link_vk"></a>
+							<a href="#!" class="contact-list__link contact-list__link_socials contact-list__link_insta"></a>
+						</li>
+					</ul>
+					<div class="site-logo-large footer__logo">
+						<a href="index.html" class="site-logo-large__link"> <img src="./images/dest/logo-lg.png" alt="Форелевое хозяйство Алдога" class="site-logo-large__img" /> </a>
+					</div>
+					<ul class="footer__navigation-list navigation-list">
+						<li class="navigation-list__item"><a href="catalog.html" class="navigation-list__link">Каталог </a></li>
+						<li class="navigation-list__item"><a href="delivery-payment.html" class="navigation-list__link">Доставка и оплата </a></li>
+						<li class="navigation-list__item"><a href="#!" class="navigation-list__link">Новости </a></li>
+						<li class="navigation-list__item"><a href="#!" class="navigation-list__link">Купить оптом </a></li>
+						<li class="navigation-list__item"><a href="news.html" class="navigation-list__link">Рецепты </a></li>
+						<li class="navigation-list__item"><a href="reviews.html" class="navigation-list__link">Отзывы </a></li>
+						<li class="navigation-list__item"><a href="#!" class="navigation-list__link">О компании </a></li>
+						<li class="navigation-list__item"><a href="contacts.html" class="navigation-list__link">Контакты </a></li>
+					</ul>
+				</div>
+				<div class="footer__copyright">
+					<p class="footer__copyright-text">© 2020 Все права защищены</p>
+					<img src="./images/dest/static/payment.jpg" alt="Оплата: visa, яндекс деньги, master card, mebmoney" class="footer__copyright-img" />
+				</div>
+			</div>
+		</footer>
+		<div class="all-modals">
+			<!-- Задать вопрос из шапки -->
+			<div data-bind="modal_question" class="modal modal_question" data-type="modal">
+				<div class="modal__header"><button data-bind="modal_close" class="modal__close icon-cancel"></button></div>
+				<p class="modal__title">Задать вопрос</p>
+				<p class="modal__description">Заполните поля ниже и в ближайшее время наш сотрудник с вами свяжется!</p>
+				<div class="feedback">
+					<form class="feedback__form contact-form">
+						<div class="contact-form__inputs">
+							<div class="contact-form__group"><input placeholder="Как вас зовут?" type="text" class="contact-form__input" /> <span class="contact-form__icon icon-user"></span></div>
+
+							<div class="contact-form__group">
+								<input placeholder="Ваш email адрес" type="email" required class="contact-form__input" /> <span class="contact-form__icon icon-envelope-open"></span>
+							</div>
+
+							<div class="contact-form__group"><input placeholder="Телефон для связи" type="number" class="contact-form__input" /> <span class="contact-form__icon icon-phone"></span></div>
+						</div>
+
+						<div class="contact-form__group contact-form__group_textarea"><textarea class="contact-form__textarea" placeholder="Ваше сообщение"></textarea></div>
+
+						<div class="modal__btn-wrapper"><button class="site-btn modal__btn">Свяжитесь со мной</button></div>
+					</form>
+				</div>
+			</div>
+
+			<!-- Успех - Заказ принят. Страницы: basket.html orders.html  -->
+			<div data-bind="modal_success_order" class="modal modal_success" data-type="modal">
+				<div class="modal__header"><button data-bind="modal_close" class="modal__close icon-cancel"></button></div>
+				<div class="modal__center">
+					<p class="modal__title">Спасибо, ваш заказ принят!</p>
+					<p class="modal__description">Спасибо! В ближайшее время наш сотрудник с вами свяжется!</p>
+					<div class="feedback">
+						<form class="feedback__form contact-form">
+							<div class="modal__btn-wrapper"><a href="index.html" class="site-btn modal__btn">Вернуться на главную</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Успех - Отправка данных в форме. Страница contacts.html -->
+			<div data-bind="modal_success" class="modal modal_success" data-type="modal">
+				<div class="modal__header"><button data-bind="modal_close" class="modal__close icon-cancel"></button></div>
+				<div class="modal__center">
+					<p class="modal__title">Спасибо!</p>
+					<p class="modal__description">Спасибо! В ближайшее время наш сотрудник с вами свяжется!</p>
+					<div class="feedback">
+						<form class="feedback__form contact-form">
+							<div class="modal__btn-wrapper"><a href="index.html" class="site-btn modal__btn">Вернуться на главную</a></div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- Смотреть отзыв. Страницы: reviews.html  -->
+			<div data-bind="modal_review" class="modal modal_review" data-type="modal">
+				<div class="modal__document">
+					<div class="modal__header"><button data-bind="modal_close" class="modal__close icon-cancel"></button></div>
+					<div class="modal__center">
+						<div class="modal__review">
+							<div class="modal__images cart-images">
+								<div data-bind="author-thumbnails" class="cart-images__thumbnails">
+									<a data-bind="author-img-fancy" data-fancybox="review" href="./images/dest/products/product_5.jpg" class="cart-images__thumbnail-wrapper active">
+										<img data-bind="author-img" src="./images/dest/products/product_5-min.jpg" alt="" class="cart-images__thumbnail" />
+									</a>
+									<a data-fancybox="review" href="./images/dest/products/product_7.jpg" class="cart-images__thumbnail-wrapper">
+										<img src="./images/dest/products/product_7-min.jpg" alt="" class="cart-images__thumbnail" />
+									</a>
+									<a data-fancybox="review" href="./images/dest/products/product_6.jpg" class="cart-images__thumbnail-wrapper">
+										<img src="./images/dest/products/product_6-min.jpg" alt="" class="cart-images__thumbnail" />
+									</a>
+									<a data-fancybox="review" href="./images/dest/products/product_1.jpg" class="cart-images__thumbnail-wrapper">
+										<img src="./images/dest/products/product_1-min.jpg" alt="" class="cart-images__thumbnail" />
+									</a>
+								</div>
+
+								<a data-bind="author-main-img-fancy" data-fancybox="review" href="./images/dest/products/product_5.jpg" class="cart-images__main-img-wrapper">
+									<img data-bind="author-main-img" src="./images/dest/products/product_5.jpg" alt="" class="cart-images__main-img" />
+								</a>
+							</div>
+							<div class="modal__review-content">
+								<p data-bind="author-name" class="modal__author-name">Максим Л.</p>
+								<p data-bind="author-text" class="modal__author-text">Я люблю пить чай с разными вкусняшками. А в сезон вирусных заболеваний хочется, чтобы эти вкусняшки приносили еще и пользу.</p>
+								<div class="modal__links">
+									<p class="modal__links-title">Ссылка на отзыв:</p>
+									<a href="#!" class="modal__links-link modal__links-link_ok icon-odnoklassniki"> </a> <a href="#!" class="modal__links-link modal__links-link_vk icon-vk"></a>
+									<a href="#!" class="modal__links-link modal__links-link_fb icon-facebook"></a> <a href="#!" class="modal__links-link modal__links-link_insta icon-instagram"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Оставить отзыв. Страницы: reviews.html -->
+			<div data-bind="modal_leave_review" class="modal modal_leave-review" data-type="modal">
+				<div class="modal__header"><button data-bind="modal_close" class="modal__close icon-cancel"></button></div>
+				<p class="site-title">Оставить отзыв</p>
+				<div class="feedback">
+					<form class="feedback__form contact-form contact-form_leave-review">
+						<div class="contact-form__group"><input placeholder="Ваше имя и фамилия" type="text" class="contact-form__input" /></div>
+
+						<div class="contact-form__group contact-form__group_textarea"><textarea class="contact-form__textarea" placeholder="Текст отзыва"></textarea></div>
+
+						<div class="contact-form__group contact-form__group_file">
+							<input type="file" name="file" id="file" class="inputfile contact-form__input contact-form__input_file" data-multiple-caption="{count} files selected" multiple />
+							<label class="contact-form__file-label" for="file">
+								<span class="contact-form__label-help" data-bind="help">Прикрепить фото</span> <span class="contact-form__label-icon icon-attach"></span>
+							</label>
+						</div>
+
+						<div class="modal__btn-wrapper"><button class="site-btn modal__btn">Отправить</button></div>
+					</form>
+				</div>
+			</div>
+
+			<div data-bind="overlay" class="site-overlay"></div>
+		</div>
+		<script src="js/app.min.js"></script>
+	</body>
+</html>

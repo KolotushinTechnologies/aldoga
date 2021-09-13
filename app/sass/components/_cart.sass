@@ -1,0 +1,256 @@
+.cart
+    &__wrapper
+    &__main
+        display: flex
+    &__images
+        display: flex
+        &-thumbnails
+            display: flex
+            flex-direction: column
+            margin-right: 10px
+            width: 100px
+        &-thumbnail-wrapper
+            position: relative
+            display: block
+            width: 100px
+            height: 100px
+            margin-bottom: 10px
+            &:last-child
+                margin-bottom: 0
+            &:hover
+                &::after
+                    opacity: 1
+            &.active
+                &::before
+                    content: ""
+                    position: absolute
+                    bottom: 0
+                    height: 6px
+                    left: 0
+                    right: 0
+                    opacity: 1
+                    background-color: #fe9100
+                    transition: all .3s ease
+            &::after
+                content: "\e819"
+                position: absolute
+                top: 0
+                right: 0
+                left: 0
+                bottom: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                transform: scale(-1, 1)
+                font-family: fontello
+                font-size: 20px
+                color: #fff
+                opacity: 0
+                transition: all .3s ease
+        &-thumbnail
+            max-width: 100%
+            width: 100%
+            height: 100%
+            object-fit: cover
+        &-main-img-wrapper
+            position: relative
+            flex-basis: 470px
+            width: 470px
+            height: 430px
+            &:hover
+                &::after
+                    opacity: 1
+            &::after
+                content: "\e819"
+                position: absolute
+                top: 0
+                right: 0
+                left: 0
+                bottom: 0
+                display: flex
+                justify-content: center
+                align-items: center
+                transform: scale(-1, 1)
+                font-family: fontello
+                font-size: 40px
+                color: #fff
+                opacity: 0
+                transition: all .3s ease
+        &-main-img
+            max-width: 100%
+            width: 100%
+            height: 100%
+            object-fit: cover
+    &__content
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        flex-wrap: wrap
+        align-content: center
+        flex: 1
+        padding-left: 80px
+        background-color: #f4f4f4
+        &-title
+            flex-basis: 100%
+            font-size: 24px
+            color: rgb(17, 17, 17)
+            line-height: 1.042
+            text-align: left
+            margin-bottom: 5px
+        &-tags
+            flex-basis: 100%
+            color: #6f6f6f
+            font-size: 16px
+            margin-bottom: 30px
+        &-description
+            flex-basis: 100%
+            font-size: 16px
+            margin-bottom: 40px
+        &-price-counter
+            flex-basis: 100%
+            display: flex
+            align-items: center
+            margin-bottom: 40px
+        &-price
+            font-size: 24px
+            font-family: "Lato"
+            color: rgb(17, 17, 17)
+            font-weight: bold
+            line-height: 1.2
+            text-align: left
+            margin-right: 40px
+        &-counter
+        &-btn
+            width: 100%
+            max-width: 210px
+    &__text
+        margin: 40px 0
+    &__descriptions
+        display: flex
+        justify-content: space-between
+        align-items: stretch
+        &-item
+            display: flex
+            flex-direction: column
+            padding: 30px 15px 30px 20px
+            background-color: #f4f4f4
+            flex-basis: calc(20% - 5px)
+            margin-right: 5px
+            text-align: left
+            &:last-child
+                margin-right: 0
+                flex-basis: 20%
+        &-title
+            color: #111
+            font-size: 14px
+            margin-bottom: 5px
+            white-space: nowrap
+        &-value
+            font-size: 16px
+            font-weight: 900
+            color: #111
+            line-height: 1.25
+
+@media only screen and (max-width: 1100px) 
+    .cart__descriptions-item 
+        padding: 15px 10px
+    .cart__descriptions-value
+        font-size: 13px
+
+@media only screen and (max-width: 992px) 
+    .cart__content
+        padding: 20px
+    .cart__content-title
+        font-size: 18px
+    .cart__content-tags
+        margin-bottom: 20px
+        font-size: 14px
+    .cart__content-description
+        margin-bottom: 20px
+    .cart__text
+        margin: 20px 0
+    .cart__descriptions
+        flex-wrap: wrap
+        margin: 0 -10px -10px 0
+        &-item
+            flex-basis: calc(33% - 10px)
+            min-width: calc(33% - 10px)
+            flex: 1
+            margin: 0 10px 10px 0
+            &:last-child
+                flex-basis: calc(33% - 10px)
+                min-width: calc(33% - 10px)
+                margin: 0 10px 10px 0
+
+@media only screen and (max-width: 768px) 
+    .cart-images_large
+        width: 300px
+        flex-basis: 300px
+    .cart__content-title
+        font-size: 16px
+        font-weight: 900
+    .cart__content-tags
+        font-size: 13px
+        margin-bottom: 10px
+    .cart__content-description
+        font-size: 14px
+        margin-bottom: 10px
+    .cart__content-price
+        font-size: 18px
+    .cart__content
+        &-price
+            width: 100%
+            margin-right: 0
+            flex-basis: 100%
+            margin-bottom: 10px
+            &-counter
+                flex-wrap: wrap
+        .site-counter__control,
+        .site-counter__input
+            height: 25px
+    .cart__descriptions
+        margin: 0 
+        &-item
+            flex-basis: 100%
+            width: 100%
+            margin: 0
+            padding: 10px
+            flex-direction: row
+            align-items: center
+            border-bottom: 1px solid #fff
+            &:last-child
+                flex-basis: 100%
+                width: 100%
+                margin: 0 
+                border-bottom: 0
+        &-title
+            margin-bottom: 0
+            margin-right: 10px
+
+@media only screen and (max-width: 576px) 
+    .cart__content
+    .cart__content-title,
+    .cart__content-description,
+    .cart__content-tags,
+    .cart__content-price,
+    .cart__content-price-counter
+        text-align: center
+        justify-content: center
+    .cart__content-btn
+        margin: 0 auto 
+    .cart__main
+        flex-wrap: wrap
+    .cart__images
+        order: 2
+        width: 100%
+        flex-basis: 100%
+    .cart__content
+        order: 1
+        margin-bottom: 10px
+
+@media only screen and (max-width: 480px) 
+    .cart__descriptions-title
+        font-size: 12px
+        margin-right: 5px
+    .cart__descriptions-value
+        font-size: 10px

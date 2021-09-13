@@ -1,0 +1,317 @@
+.pagination
+    +reset-ul
+    display: flex
+    justify-content: center
+    align-items: center
+    &_reviews
+        flex-basis: 100%
+        padding: 0 20px
+        .pagination__item:first-child
+            margin-right: auto
+    &__item
+        &:not(:last-child)
+            margin-right: 15px
+    &__link
+        +reset-link
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        border: 2px solid #cdcdcd
+        line-height: 1
+        width: 42px
+        height: 42px
+        color: #000
+        white-space: nowrap
+        &:active,
+        &:focus,
+        &:hover
+            color: #000
+            outline: 0
+            border-color: $orange
+        &_btn
+            +reset-link
+            padding: 15px 45px
+            width: auto
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            text-transform: uppercase
+            background: transparent
+            transition: all .3s ease
+            cursor: pointer
+            &:hover
+                background-color: $orange
+                color: #fff
+                border-color: $orange
+        &_selected
+            border-color: $orange
+        &_next
+            font-size: 18px
+
+.catalog
+    &__wrapper
+        margin-bottom: 100px
+    &__title
+    &__header
+        position: relative
+        display: flex
+        border-bottom: 1px solid #c9c9c9
+        padding-bottom: 10px
+        margin-bottom: 45px
+    &__preloader
+        position: absolute
+        top: calc(100% + 50px)
+        left: 0
+        right: 0
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        text-align: center
+        opacity: 0
+        visibility: hidden
+        z-index: -1
+        transition: all .3s ease
+        &.active
+            opacity: 1
+            visibility: visible
+            z-index: 1000
+        svg
+            width: 100px
+            height: 100px
+    &__filter
+        display: flex
+        align-items: center
+        &-btn
+            +reset-btn
+            position: relative
+            display: inline-flex
+            align-items: center
+            font-size: 16px
+            color: rgb(17, 17, 17)
+            line-height: 1.562
+            text-align: left
+            margin-right: 70px
+            transition: all .3s ease
+            &.active
+                font-weight: 600
+            &:hover
+                cursor: pointer
+            &:last-child
+                margin-right: 0
+            &_meat
+                position: relative
+                &::before
+                    content: ""
+                    position: relative
+                    background: url(../images/dest/static/icon-meat.png) no-repeat center / contain
+                    width: 65px
+                    height: 65px
+            &_caviar
+                position: relative
+                &::before
+                    content: ""
+                    position: relative
+                    background: url(../images/dest/static/icon-caviar.png) no-repeat center / contain
+                    width: 30px
+                    height: 30px
+                    margin-right: 10px
+            &_сheese
+                position: relative
+                &::before
+                    content: ""
+                    position: relative
+                    background: url(../images/dest/static/icon-cheese.png) no-repeat center / contain
+                    width: 30px
+                    height: 30px
+                    margin-right: 10px
+            &_berry
+                position: relative
+                &::before
+                    content: ""
+                    position: relative
+                    background: url(../images/dest/static/icon-berries.png) no-repeat center / contain
+                    width: 30px
+                    height: 30px
+                    margin-right: 10px
+    &__sorting
+        display: inline-flex
+        margin-left: auto
+        &-item
+            display: flex
+            align-items: center
+            white-space: nowrap
+        &-title
+            margin-right: 10px
+        &-btn
+            +reset-btn
+            position: relative
+            font-size: 16px
+            color: rgb(17, 17, 17)
+            line-height: 1.562
+            text-align: left
+            cursor: pointer
+            padding-right: 15px
+            &::before
+                content: "\e813"
+                position: absolute
+                font-family: fontello
+                right: 0
+                transition: all .3s ease
+            &.active
+                &::before
+                    transform: rotate(180deg)
+            &-text
+                &_sm
+                    display: none
+                &_md
+    &__list
+        +reset-ul
+        margin: 0 -15px 60px -15px
+        &::after
+            content: ""
+            display: table
+            clear: both
+        &_isotope
+            &::before
+                content: ""
+                position: absolute
+                top: -5px
+                left: -10%
+                right: -10%
+                bottom: -5px
+                width: 120%
+                height: calc(100% + 10px)
+                background-color: rgba(255,255,255,1)
+                z-index: -1
+                opacity: 0
+                visibility: hidden
+                transition: all .3s ease
+            &.active
+                &::before
+                    z-index: 10
+                    opacity: 1
+                    visibility: visible
+                    transition: all .3s ease
+    &__pagination
+
+@media only screen and (max-width: 1100px) 
+    .pagination__link
+        height: 35px
+        width: 35px
+        font-size: 14px
+    .pagination__link_btn
+        padding-top: 0
+        padding-bottom: 0
+        width: auto
+
+@media only screen and (max-width: 1000px)
+    .catalog__filter-btn
+        margin-right: 25px
+
+@media only screen and (max-width: 992px) 
+    .catalog__filter-btn_meat::before
+        width: 45px
+        height: 35px
+    .catalog__filter-btn_caviar::before,
+    .catalog__filter-btn_сheese::before,
+    .catalog__filter-btn_berry::before
+        width: 20px
+        height: 20px
+    .catalog
+        &__wrapper
+            margin-bottom: 60px
+        &__list
+            margin-left: -7px
+            margin-right: -7px
+    .pagination__link
+        height: 28px
+        width: 28px
+        font-size: 13px
+    .pagination__link_btn
+        height: 28px
+        width: auto
+    .catalog__list
+        margin: 0 -15px 30px -15px
+
+@media only screen and (max-width: 768px) 
+    .catalog__header
+        margin-bottom: 20px
+    .catalog__preloader svg
+        width: 60px
+        height: 60px
+    .catalog__filter-btn
+        font-size: 13px
+        margin-right: 15px
+    .catalog__filter-btn::before
+        display: none
+    .catalog__sorting-title,
+    .catalog__sorting-btn
+        font-size: 13px
+    .pagination__item:not(:last-child)
+        margin-right: 5px
+    .pagination__link_btn
+        padding: 0 20px 
+    .catalog
+        &__list
+            margin: 0 -10px 30px -10px
+
+@media only screen and (max-width: 576px) 
+    .catalog__preloader
+        top: calc(100% + 25px)
+    .catalog__sorting
+        background: #f4f4f4
+        margin-left: 0
+        flex: 1
+    .catalog__sorting-item
+        justify-content: center
+        width: 100%
+        text-align: center
+    .catalog__sorting-btn
+        display: inline-flex
+        align-items: center
+        padding-right: 10px
+    .catalog__sorting-title
+        display: none
+    .catalog__sorting-btn-text_md
+        display: none
+    .catalog__sorting-btn-text_sm
+        display: block
+    .catalog__filter
+        flex-wrap: wrap
+    .catalog__filter-btn
+        display: inline-block
+        margin-right: 0
+        flex-basis: 33.3%
+        padding: 5px
+        background-color: #f4f4f4
+        border: 1px solid #fff
+        flex-grow: 1
+        white-space: nowrap
+        text-align: center
+        &.active
+            font-weight: 400
+            background-color: #e7e7e7
+    .catalog
+        &__list
+            margin-left: 0
+            margin-right: 0
+
+@media only screen and (max-width: 480px) 
+    .catalog__sorting-btn-text_sm
+        font-size: 11px
+    .catalog__filter-btn
+        font-size: 11px
+    .pagination__link
+        font-size: 12px
+    .catalog__list
+        margin: 0 0 30px 0
+
+@media only screen and (max-width: 380px) 
+    .pagination__link
+        font-size: 10px
+        &_btn
+            padding: 0 10px
+    .catalog__sorting-btn-text_sm
+        font-size: 10px
+    .catalog__filter-btn
+        font-size: 10px

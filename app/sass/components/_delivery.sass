@@ -1,0 +1,237 @@
+.delivery
+    &__wrapper
+        margin: 0 auto 90px auto
+    &__title
+    &__text
+        margin-bottom: 45px
+
+.delivery-form
+    &_mobile
+        display: none
+        .owl-theme .owl-nav
+            margin: 0
+            position: absolute
+            top: 0
+            right: 0
+            left: 0
+            width: 80%
+            height: 43px
+            margin: 0 auto
+            display: flex
+            justify-content: space-between
+            align-items: center
+        .owl-theme .owl-nav [class*=owl-]:hover
+            background-color: transparent
+            color: #000
+            outline: none
+        .owl-theme .owl-nav [class*=owl-]
+            font-size: 28px
+        .owl-theme .owl-nav [class*=owl-]
+            margin: 0
+    &__wrapper
+        display: flex
+        margin-bottom: 65px
+    &__tabs
+        align-self: flex-start
+        flex-basis: 270px
+        display: flex
+        flex-direction: column
+    &__tabs-input
+        display: none
+        &:checked
+            + label
+                background-color: $lightgrey
+            + label:after
+                opacity: 1
+    &__tabs-label
+        position: relative
+        padding: 22px 35px 22px 55px
+        font-size: 18px
+        font-weight: 900
+        cursor: pointer
+        transition: all .3s ease
+        &:hover
+            background-color: $thingrey
+        &::before
+            content: ""
+            position: absolute
+            top: 48%
+            transform: translateY(-50%)
+            left: 20px
+            width: 14px
+            height: 14px
+            border-radius: 50%
+            border: 2px solid #dddddd
+        &::after
+            content: ""
+            position: absolute
+            top: 48%
+            transform: translateY(-50%)
+            left: 24px
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background-color: $orange
+            opacity: 0
+            transition: all .3s ease
+    &__content
+        flex-grow: 1
+        padding: 30px 45px 40px 55px
+        background-color: $lightgrey
+        overflow: hidden
+    &__data
+        position: relative
+        display: table
+        width: 100%
+    &__header
+        display: table-row
+    &__header-title
+        display: table-cell
+        padding: 0 0 45px 0
+        color: $grey
+        white-space: nowrap
+        &_lg
+        &_md
+            display: none
+    &__body-item
+        display: table-row
+    &__body-text
+        display: table-cell
+        padding: 0 0 45px 0
+        white-space: nowrap
+        &_date
+            font-weight: 900
+        &_price
+            font-weight: 900
+    &__footer
+        display: flex
+        width: 100%
+        padding-top: 40px
+        position: relative
+        &::after
+            content: ""
+            position: absolute
+            top: 0
+            right: -100px
+            left: -100px
+            height: 1px
+            background-color: #dddddd
+    &__footer-title
+        white-space: nowrap
+        margin-right: 40px
+        font-size: 18px
+        font-weight: 900
+    &__footer-text
+        font-size: 18px
+        white-space: nowrap
+        &:not(:last-child)
+            margin-right: 35px
+
+
+@media only screen and (max-width: 1200px) 
+    .delivery-form__tabs-label
+        padding: 15px 10px 15px 45px
+        &::before
+            width: 10px
+            height: 10px
+        &::after
+            width: 7px
+            height: 7px
+            left: 23.5px
+    .delivery-form__tabs-label,
+    .delivery-form__header-title,
+    .delivery-form__body-text
+        font-size: 14px 
+    .delivery-form__header-title,
+    .delivery-form__body-text
+        padding-bottom: 30px
+    .delivery-form__content
+        padding: 15px 10px 10px 20px
+    .delivery-form__footer
+        padding-top: 20px
+        padding-bottom: 10px
+    .delivery-form__footer-title
+        font-size: 14px
+    .delivery-form__footer-text
+        font-size: 14px
+
+@media only screen and (max-width: 992px) 
+    .delivery-form__tabs
+        flex-basis: 230px
+    .delivery-form__footer-title,
+    .delivery-form__footer-text:not(:last-child)
+        margin-right: 10px
+    .delivery-form__body-text, .delivery-form__header-title, .delivery-form__footer-title, .delivery-form__footer-text
+        font-size: 12px 
+    .delivery-form__body-text_price
+        text-align: center
+    .delivery-form__header-title
+        &_price
+            text-align: center
+        &_lg
+            display: none
+        &_md
+            display: block
+            text-align: center
+    .delivery-form__body-text_date
+        text-align: center
+
+@media only screen and (max-width: 768px) 
+    .delivery-form
+        &__wrapper
+            margin-bottom: 35px
+        &_desktop
+            display: none
+        &_mobile
+            display: block
+        &__item
+            flex-basis: 100%
+            &-title
+                padding: 10px
+                text-align: center
+                font-size: 14px
+                font-weight: 900
+                background-color: $lightgrey
+                border-bottom: 1px solid #dbdbdb
+        &__content
+            padding: 20px 15px
+    .delivery-form
+        &__data
+            display: flex
+            flex-direction: column
+        &__header
+            display: flex
+            &-title
+                display: inline-block
+                flex-basis: 30%
+                font-size: 10px
+                &_service
+                    flex-basis: 60%
+                    white-space: unset
+                    line-height: 1.3
+                    padding-right: 10px
+        &__body
+            &-item
+                display: flex
+            &-text
+                display: inline-block
+                flex-basis: 30%
+                font-size: 11px
+                &_service
+                    flex-basis: 60%
+                    white-space: unset
+                    line-height: 1.3
+                    padding-right: 10px
+        &__footer
+            flex-wrap: wrap
+            padding-bottom: 0
+
+@media only screen and (max-width: 576px) 
+    .delivery__wrapper
+        margin-bottom: 0
+
+@media only screen and (max-width: 480px) 
+    .delivery__text
+        text-align: center
+        font-size: 12px
+        line-height: 1.3
